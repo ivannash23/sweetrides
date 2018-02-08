@@ -367,11 +367,6 @@
 
 /*------------------------- Start Carousel --------------------*/
 
-@font-face {
-    font-family: "OpenSans
-
-}
-
 .carousel-caption {
     z-index: 999;
 }
@@ -382,10 +377,6 @@
     text-shadow: 0 0px 0px rgba(0, 0, 0, .0);
 }
 
-@font-face {
-
-    src: url(../source/fonts/OpenSans-Regular.ttf) format("truetype");
-}
 
 .carousel-caption>h2>p {
     font-family: :'OpenSans Regular';
