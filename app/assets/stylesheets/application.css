@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.landingbg {
+    background-image: url("https://images.fineartamerica.com/images-medium-large/indian-motorcycles-in-sepia-tam-graff.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.navbar-light{
+	background-color: white;
+}
+
