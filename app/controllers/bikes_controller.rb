@@ -1,10 +1,18 @@
 class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!,except:[:index]
+  before_action :bike_owner, only: [:edit, :update, :destroy]
 
   # GET /bikes
   # GET /bikes.json
   def index
     @bikes = Bike.all
+  end
+
+  def bike_owner
+   unless @bike.user_id == current_user.id
+    flash[:notice] = 'Access denied as you are not owner of this Job'
+    redirect_to bikes_path
   end
 
   # GET /bikes/1
@@ -69,6 +77,7 @@ class BikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:price, :model, :brand, :milage)
+      params.require(:bike).permit(:model, :brand).merge(user_id: current_user.id)
     end
+  end
 end

@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :bike_price %>
-  </div>
-
-  <div class="field">
     <%= form.label :model %>
     <%= form.text_field :model, id: :bike_model %>
   </div>
@@ -26,9 +21,8 @@
     <%= form.text_field :brand, id: :bike_brand %>
   </div>
 
-  <div class="field">
-    <%= form.label :milage %>
-    <%= form.number_field :milage, id: :bike_milage %>
+   <div class="field">
+    <%= form.hidden_field :user_id , :value => current_user.id %>
   </div>
 
   <div class="actions">

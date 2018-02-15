@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StoreTest < ActiveSupport::TestCase
+class bikeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BikesControllerTest < ActionDispatch::IntegrationTest
+class bikesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @bike = bikes(:one)
   end
@@ -16,11 +16,11 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create bike" do
-    assert_difference('Bike.count') do
-      post bikes_url, params: { bike: { brand: @bike.brand, model: @bike.model } }
+    assert_difference('bike.count') do
+      post bikes_url, params: { bike: { brand: @bike.brand, milage: @bike.milage, model: @bike.model, price: @bike.price } }
     end
 
-    assert_redirected_to bike_url(Bike.last)
+    assert_redirected_to bike_url(bike.last)
   end
 
   test "should show bike" do
@@ -34,12 +34,12 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update bike" do
-    patch bike_url(@bike), params: { bike: { brand: @bike.brand, model: @bike.model } }
+    patch bike_url(@bike), params: { bike: { brand: @bike.brand, milage: @bike.milage, model: @bike.model, price: @bike.price } }
     assert_redirected_to bike_url(@bike)
   end
 
   test "should destroy bike" do
-    assert_difference('Bike.count', -1) do
+    assert_difference('bike.count', -1) do
       delete bike_url(@bike)
     end
 

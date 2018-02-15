@@ -1,0 +1,16 @@
+<div class="row">
+    <nav class="hover-underline-menu" data-menu-underline-from-center>
+        <ul class="menu align-center">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Bikes", bikes_path %></li>
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+            <% else %>
+              <li><%= link_to "Become a Seller", new_user_registration_path, :class => 'navbar-link'  %></li>
+              <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+            <% end %>
+        </ul>
+    </nav>
+</div>
