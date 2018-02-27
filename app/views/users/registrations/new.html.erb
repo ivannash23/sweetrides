@@ -4,6 +4,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+      <%= f.label :avatar, class: 'control-label'  %>
+      <div>
+          <%= f.file_field :avatar %>
+      </div>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>

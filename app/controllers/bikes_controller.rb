@@ -11,7 +11,7 @@ class BikesController < ApplicationController
 
   def bike_owner
    unless @bike.user_id == current_user.id
-    flash[:notice] = 'Access denied as you are not owner of this Job'
+    flash[:notice] = 'Access denied as you are not owner of this Bike'
     redirect_to bikes_path
   end
 
