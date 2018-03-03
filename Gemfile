@@ -22,6 +22,8 @@ gem 'paperclip', '~> 4.1'
 
 gem 'devise'
 
+gem "faker"
+
 
 gem 'rails-ujs'
 # Use CoffeeScript for .coffee assets and views
