@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :edit, :update, :destroy]
+  before_action :set_bike, only: [:edit, :update, :destroy]
   before_action :authenticate_user!,except:[:index]
   before_action :bike_owner, only: [:edit, :update, :destroy]
 
@@ -18,6 +18,7 @@ class BikesController < ApplicationController
   # GET /bikes/1
   # GET /bikes/1.json
   def show
+    @bike = Bike.find(params[:id])
   end
 
   # GET /bikes/new
@@ -32,7 +33,7 @@ class BikesController < ApplicationController
   # POST /bikes
   # POST /bikes.json
   def create
-    @bike = Bike.new(bike_params)
+    @bike = Bike.new(params[:bike])
 
     respond_to do |format|
       if @bike.save

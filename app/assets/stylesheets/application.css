@@ -16,5 +16,46 @@
 
  */
 
+#rowFeature {
+    background-color: #f9f9f7;
+}
+
+#captionFeature {
+    width: 85%;
+    height: auto;
+    border: 1px solid #C59E47;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.caption {
+    margin-top: 30%;
+}
+
+#imageFeature {
+    border: none;
+    min-height: 400px;
+}
+
+#buttonDetailsFeature {
+    border: 1px solid #020243;
+    background: none;
+    color: #020243;
+    cursor: pointer;
+    font-size: 19px;
+    letter-spacing: 5px;
+    width: 68%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#buttonDetailsFeature:hover{
+	background: #020243;
+	color: white;
+}
 
 
+
+}

@@ -14,9 +14,11 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
+        <td><%= image_tag bike.avatar.url(:thumb) %></td>
         <td><%= bike.model %></td>
         <td><%= bike.brand %></td>
         <td><%= bike.user_id %></td>
+
         <% if (user_signed_in? && (current_user.id == bike.user_id)) %>
           <td><%= link_to "Edit", edit_bike_path(bike) %></td>
           <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>

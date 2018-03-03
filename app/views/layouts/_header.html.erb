@@ -1,16 +1,63 @@
-<div class="row">
-    <nav class="hover-underline-menu" data-menu-underline-from-center>
-        <ul class="menu align-center">
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Bikes", bikes_path %></li>
-            <% if user_signed_in? %>
-              <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
-              <li><%= link_to "Welcome " + current_user.name , edit_user_registration_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
-            <% else %>
-              <li><%= link_to "Become a Seller", new_user_registration_path, :class => 'navbar-link'  %></li>
-              <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-            <% end %>
-        </ul>
-    </nav>
+<!-- Start Top Bar -->
+<div class="title-bar" data-responsive-toggle="mainNavigation" data-hide-for="medium">
+    <div class="title-bar-left">
+        <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>
+        <div class="title-bar-title">Menu</div>
+    </div>
+    <!-- if user IS sign in this will display -->
+    <% if user_signed_in? %>
+        <div class="title-bar-right">
+            <%= link_to "SweetRides", root_path %>
+        </div>
 </div>
+<div class="top-bar" id="mainNavigation">
+    <div class="top-bar-left">
+        <ul class="menu vertical medium-horizontal">
+            <li class="menu-text hide-for-small-only"><%= link_to "SweetRides", root_path %></li>
+            <li>
+                <%= link_to "Bikes", bikes_path %>
+            </li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <ul class="menu vertical medium-horizontal">
+            <li>
+              <%= link_to "Welcome " + current_user.name , edit_user_registration_path, :class => 'navbar-link' %>
+            </li>
+            <li>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+            </li>
+            <li class="round-image-50">
+                <%= image_tag(current_user.avatar.url(:thumb)) %>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- if user is NOT signed in this will display -->
+<% else %>
+    <div class="title-bar-right">
+        <%= link_to "SweetRides", root_path %>
+    </div>
+    </div>
+    <div class="top-bar" id="mainNavigation">
+        <div class="top-bar-left">
+            <ul class="menu vertical medium-horizontal">
+                <li class="menu-text hide-for-small-only">SweetRides</li>
+                <li>
+                    <%= link_to "Bikes", bikes_path %>
+                </li>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu vertical medium-horizontal">
+                <li>
+                    <%= link_to "Become a Seller", new_user_registration_path, :class => 'navbar-link'  %>
+                </li>
+                <li>
+                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                </li>
+            </ul>
+        </div>
+    </div>
+<% end %>
+        <!-- End Top Bar -->

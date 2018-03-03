@@ -1,16 +1,51 @@
-<h4 class="column">Featured Bikes</h4>
-<div class="column">
-    <ul class="movies-grid no-bullet row">
-        <% @bikes.each do |bike| %>
-            <li class="large-3 medium-4 small-12 column">
-                <div class="movie-card padly">
-                    <div class="movie-info ell glassy-bg padmy padlx">
-                        <div class="title">
-                            <h6><%= bike.brand %> <span> <%= bike.model %> </span></h6>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <% end %>
-    </ul>
+<div class="row">
+    <img width="100%" src="https://i.imgur.com/sit4VkG.jpg">
 </div>
+<br>
+<hr>
+<div class="row">
+    <div class="container text-center">
+        <h2>• About Us •</h2>
+        <h6>SweetRide is the leading online marketplace for buying and selling motorcycles, parts and accessories. While we do have a modern section, our emphasis is on the classic scene. Unlike any other source, SweetRide verifies ALL sellers so that buyers can be sure they are dealing with reputable, responsible people, and that what is being advertised is what they actually get. Trying to find a magneto for your ‘63 unit twin? Looking for a vintage Seeley 7R racer? SweetRide is your trusted marketplace for anything and everything in the motorcycling world.</h6>
+    </div>
+</div>
+<hr>
+<br>
+<div class="text-center">
+    <h2>• Feature Bikes •</h2>
+</div>
+<br>
+<div id="rowFeature" class="row">
+    <% @bikes.each do |bike| %>
+        <div id="imageFeature" class="col-sm-3 col-md-3  ">
+            <%= image_tag bike.avatar.url(:medium)%>
+        </div>
+        <div id="captionFeature" class="col-sm-3 col-md-3">
+            <div class="caption text-center">
+                <h3><%= bike.brand %>, <%= bike.model %></h3>
+                <p>$ PRICE</p>
+                <p><a href="#" id="buttonDetailsFeature" class="btn btn-default" role="button">Details</a></p>
+            </div>
+        </div>
+        <% end %>
+</div>
+
+<br>
+<div class="text-center">
+    <h2>• Latest Bikes •</h2>
+</div>
+<br>
+
+<div id="order-by">
+    <form>
+        <select name="sort">
+            <option value="brand">brand</option>
+            <option value="model">model</option>
+        </select>
+        <input type="submit" value="Sort" />
+    </form>
+</div>
+<% @bikesOrder.each do |bike| %>
+    <%= image_tag bike.avatar.url(:medium)%>
+        <% end %>
+            </div>
