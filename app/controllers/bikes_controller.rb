@@ -78,7 +78,7 @@ class BikesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:model, :brand).merge(user_id: current_user.id)
+      params.require(:bike).permit(:avatar, :model, :brand).merge(user_id: current_user.id)
     end
   end
 end

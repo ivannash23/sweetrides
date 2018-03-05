@@ -22,7 +22,9 @@ gem 'paperclip', '~> 4.1'
 
 gem 'devise'
 
-gem "faker"
+gem 'faker'
+
+gem 'aws-sdk', '~> 2'
 
 
 gem 'rails-ujs'
