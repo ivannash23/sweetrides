@@ -14,7 +14,7 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
-        <td><%= image_tag bike.avatar.url(:s3_domain_url) %></td>
+        <td><%= image_tag bike.avatar.url(:medium) %></td>
         <td><%= bike.model %></td>
         <td><%= bike.brand %></td>
         <td><%= bike.user_id %></td>

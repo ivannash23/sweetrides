@@ -18,13 +18,15 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'paperclip', '~> 4.1'
-
 gem 'devise'
+
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+gem 'aws-sdk', '~> 2'
 
 gem 'faker'
 
-gem 'aws-sdk', '~> 2'
+gem 'dotenv-rails'
 
 
 gem 'rails-ujs'
