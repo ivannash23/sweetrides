@@ -19,6 +19,7 @@ class BikesController < ApplicationController
 
   # GET /bikes/new
   def new
+    params.permit!
     @bike = Bike.new
   end
 
