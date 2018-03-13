@@ -18,7 +18,7 @@
 <div id="rowFeature" class="row">
     <% @bikes.each do |bike| %>
         <div id="imageFeature" class="col-sm-3 col-md-3  ">
-            <%= image_tag bike.avatar.url(:thumb)%>
+            <%= image_tag bike.avatar.url(:medium), style: "min-height:500px;"%>
         </div>
         <div id="captionFeature" class="col-sm-3 col-md-3">
             <div class="caption text-center">

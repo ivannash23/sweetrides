@@ -1,63 +1,33 @@
-<!-- Start Top Bar -->
-<div class="title-bar" data-responsive-toggle="mainNavigation" data-hide-for="medium">
-    <div class="title-bar-left">
-        <button class="menu-icon" type="button" data-toggle="mainNavigation"></button>
-        <div class="title-bar-title">Menu</div>
-    </div>
-    <!-- if user IS sign in this will display -->
-    <% if user_signed_in? %>
-        <div class="title-bar-right">
-            <%= link_to "SweetRides", root_path %>
+<% if user_signed_in? %>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:#ffffff;">
+        <div class="container">
+            <%= link_to "SweetRides", root_path, class: "navbar-brand" %>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <%= link_to "Bikes", bikes_path, class: "nav-item nav-link", style: "color: black;" %>
+                            <%= link_to "Welcome " + current_user.name , edit_user_registration_path, class: "nav-item nav-link", style: "color: black;" %>
+                                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-item nav-link", style: "color: black;"  %>
+                    </div>
+                </div>
         </div>
-</div>
-<div class="top-bar" id="mainNavigation">
-    <div class="top-bar-left">
-        <ul class="menu vertical medium-horizontal">
-            <li class="menu-text hide-for-small-only"><%= link_to "SweetRides", root_path %></li>
-            <li>
-                <%= link_to "Bikes", bikes_path %>
-            </li>
-        </ul>
-    </div>
-    <div class="top-bar-right">
-        <ul class="menu vertical medium-horizontal">
-            <li>
-              <%= link_to "Welcome " + current_user.name , edit_user_registration_path, :class => 'navbar-link' %>
-            </li>
-            <li>
-              <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-            </li>
-            <li class="round-image-50">
-                <%= image_tag(current_user.avatar.url(:thumb)) %>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- if user is NOT signed in this will display -->
-<% else %>
-    <div class="title-bar-right">
-        <%= link_to "SweetRides", root_path %>
-    </div>
-    </div>
-    <div class="top-bar" id="mainNavigation">
-        <div class="top-bar-left">
-            <ul class="menu vertical medium-horizontal">
-                <li class="menu-text hide-for-small-only">SweetRides</li>
-                <li>
-                    <%= link_to "Bikes", bikes_path %>
-                </li>
-            </ul>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu vertical medium-horizontal">
-                <li>
-                    <%= link_to "Become a Seller", new_user_registration_path, :class => 'navbar-link'  %>
-                </li>
-                <li>
-                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-                </li>
-            </ul>
-        </div>
-    </div>
-<% end %>
-        <!-- End Top Bar -->
+    </nav>
+    <% else %>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #ffffff;">
+            <div class="container">
+                <%= link_to "SweetRides", root_path, class: "navbar-brand" %>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <%= link_to "Bikes", bikes_path, class: "nav-item nav-link", style: "color: black;" %>
+                                <%= link_to "Become a Seller", new_user_registration_path, class: "nav-item nav-link", style: "color: black;"  %>
+                                    <%= link_to "Login", new_user_session_path, class: "nav-item nav-link", style: "color: black;"  %>
+                        </div>
+                    </div>
+            </div>
+        </nav>
+        <% end %>
