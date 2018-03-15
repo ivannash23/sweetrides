@@ -21,12 +21,12 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     storage: :s3,
-    s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com",
+    s3_host_name: "s3-us-west-1.amazonaws.com",
     s3_credentials: {
       bucket: 'sweetrides-dev',
       access_key_id: 'AKIAIKLGOTNB4O2RBYWA',
       secret_access_key: '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',
-      s3_region: ENV.fetch('AWS_REGION'),
+      s3_region: 'us-west-1',
     }
   }
 

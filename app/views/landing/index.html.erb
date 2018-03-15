@@ -24,7 +24,7 @@
             <div class="caption text-center">
                 <h3><%= bike.brand %>, <%= bike.model %></h3>
                 <p>$ PRICE</p>
-                <p><%= link_to "Details", bike_path(bike), style: "color: #3f2a14;", class: "btn btn-default", id: "buttonDetailsFeature" %></p>
+                <p><%= link_to "Details", bike_path(bike), class: "btn btn-default", id: "buttonDetailsFeature" %></p>
             </div>
         </div>
         <% end %>
@@ -60,6 +60,6 @@
     </div>
     <div class="rightside">
         <%= image_tag "joinus.jpg", style: "min-height:677px;min-width:653px;" %>
-        <button><%= link_to "Become a Seller", new_user_registration_path, style: "color: #3f2a14;"  %></button>
+        <button><%= link_to "Become a Seller", new_user_registration_path, style: "color: #3f2a14;" %></button>
     </div>
 </div>
