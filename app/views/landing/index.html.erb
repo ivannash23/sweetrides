@@ -24,18 +24,16 @@
             <div class="caption text-center">
                 <h3><%= bike.brand %>, <%= bike.model %></h3>
                 <p>$ PRICE</p>
-                <p><a href="#" id="buttonDetailsFeature" class="btn btn-default" role="button">Details</a></p>
+                <p><%= link_to "Details", bike_path(bike), style: "color: #3f2a14;", class: "btn btn-default", id: "buttonDetailsFeature" %></p>
             </div>
         </div>
         <% end %>
 </div>
-
 <br>
 <div class="text-center">
     <h2>• Latest Bikes •</h2>
 </div>
 <br>
-
 <div id="order-by">
     <form>
         <select name="sort">
@@ -47,5 +45,21 @@
 </div>
 <% @bikesOrder.each do |bike| %>
     <%= image_tag bike.avatar.url(:medium)%>
-        <% end %>
-            </div>
+<% end %>
+</div>
+
+<div class="newslettercontent">
+    <div class="leftside">
+        <%= image_tag "border.png" %>
+        <h1 class="text-center">Join Us</h1>
+
+        <p>Join the world’s best, curated motorcycle marketplace targeting buyers with genuine <br>
+            interest in the motorcycles, parts and accessories you have for sale. Reach collectors, <br>
+            builders and enthusiasts through SweetRide’s global marketing platform<br>
+        </p>
+    </div>
+    <div class="rightside">
+        <%= image_tag "joinus.jpg", style: "min-height:677px;min-width:653px;" %>
+        <button><%= link_to "Become a Seller", new_user_registration_path, style: "color: #3f2a14;"  %></button>
+    </div>
+</div>
