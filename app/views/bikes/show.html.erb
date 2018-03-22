@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @bike.model %>
+<p id="notice">
+	<br>
+    <%= notice %>
 </p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @bike.brand %>
-</p>
-
-<%= link_to 'Edit', edit_bike_path(@bike) %> |
-<%= link_to 'Back', bikes_path %>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card md-12 box-shadow">
+            <%= image_tag @bike.avatar.url(:medium),style: "min-height:600px;", class: "card-mig-top img-responsive" %>
+                <div class="card-body">
+                    <h3 class="card-text">
+                        <%= @bike.brand %>,
+                            <%= @bike.model %>
+                    </h3>
+                    <br>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-lg btn-outline-secondary">
+                                <%= link_to 'Edit', edit_bike_path(@bike) %>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

@@ -1350,9 +1350,9 @@ padding-left: 0px;
 	left:25%;
 	z-index: 99;
 	background: none;
-	border: 1px solid #3f2a14;
+	border: 1px solid #14293f;
 	font-size: 31.5px;
-	color: #3f2a14;
+	color: white;
 	letter-spacing: 11px;
 	padding-left: 26.7px;
 	padding-right: 26.7px;
@@ -1360,8 +1360,17 @@ padding-left: 0px;
 	height: 12%;
 }
  .rightside>button:hover{
- 	background:#14293f;
- 	color: #3f2a14;
+ 	background:none;
+ 	color: white;
+ }
+
+ #rightside-button:hover {
+ 	text-decoration: none;
+	background:none;
+ }
+
+ #rightside-button {
+	color: white;
  }
 
  @media screen and (max-width: 676px){
