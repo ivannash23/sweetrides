@@ -68,3 +68,27 @@
     z-index: 100;
     width: 35%;
 }
+
+.top-left {
+    font-family: 'Righteous', cursive;
+    position: absolute;
+    color: #b3b3b3;
+    text-shadow: 1px 1px 1px black;
+    font-size: 50px;
+    top: 120px;
+    left: 130px;
+}
+
+#push-right-navitem{
+   margin-left: 400px;
+}
+
+#marketplace-headers{
+    color:white;
+}
+
+#marketplace-headers:hover{
+    text-decoration: none;
+    text-shadow: 1px 1px 2px white
+}
+

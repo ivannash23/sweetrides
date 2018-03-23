@@ -1,5 +1,6 @@
 <div class="row">
     <img width="100%" src="https://i.imgur.com/sit4VkG.jpg">
+    <div class="top-left">Sweet<span style="font-family: 'Bangers', cursive;font-size: 60px;">Ride</span><span style="font-size: 12px;">&copy;</span></div>
 </div>
 <br>
 <hr>
@@ -11,26 +12,22 @@
 </div>
 <hr>
 <br>
-<div class="text-center">
-    <h2>• Feature Bikes •</h2>
-</div>
-<br>
-<div id="rowFeature" class="row">
-    <% @bikes.each do |bike| %>
-        <div id="imageFeature" class="col-sm-3 col-md-3  ">
-            <%= image_tag bike.avatar.url(:medium), style: "min-height:500px;"%>
-        </div>
-        <div id="captionFeature" class="col-sm-3 col-md-3">
-            <div class="caption text-center">
-                <h3><%= bike.brand %>, <%= bike.model %></h3>
-                <p>$ PRICE</p>
-                <p><%= link_to "Details", bike_path(bike), class: "btn btn-default", id: "buttonDetailsFeature" %></p>
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="text-center"><%= link_to "• Bikes •", bikes_path , id: "marketplace-headers" %></h2>
+            <div class="col-md-12">
+                <%= link_to(image_tag("https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;"), bikes_path) %>
             </div>
-        </div>
-        <% end %>
+    </div>
+    <div class="col-md-6">
+        <h2 class="text-center"><%= link_to "• Parts •", "#" , id: "marketplace-headers" %></h2>
+            <div class="col-md-12">
+                <%= link_to(image_tag("https://images.pexels.com/photos/185545/pexels-photo-185545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;"), "#") %>
+            </div>
+    </div>
 </div>
 <br>
-<div class="text-center">
+<!-- <div class="text-center">
     <h2>• Latest Bikes •</h2>
 </div>
 <br>
@@ -46,7 +43,7 @@
 <% @bikesOrder.each do |bike| %>
     <%= image_tag bike.avatar.url(:medium)%>
 <% end %>
-</div>
+</div> -->
 
 <div class="newslettercontent">
     <div class="leftside">
@@ -60,6 +57,6 @@
     </div>
     <div class="rightside">
         <%= image_tag "https://imgur.com/JBtypZS.jpg", style: "min-height:677px;min-width:653px;" %>
-        <button><%= link_to "Become a Seller", new_user_registration_path, id: "rightside-button" %></button>
+        <button><%= link_to "Become a Verified Seller", new_user_registration_path, class: "btn btn-warning", style: "color:white; font-size: 30px;" %></button>
     </div>
 </div>
