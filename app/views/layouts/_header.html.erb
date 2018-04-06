@@ -1,31 +1,37 @@
 <% if user_signed_in? %>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:#ffffff;font-size: 20px; padding-left: 5px;padding-right: 5px;">
-        <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <!-- <%= link_to "Bikes", bikes_path, class: "nav-item nav-link", style: "color: black;" %> -->
-                            <%= link_to "Profile" , edit_user_registration_path, class: "nav-item nav-link", style: "color: black;" %>
-                            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-item nav-link", style: "color: black;"  %>
-                    </div>
-                </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div style="float: left" class="navbar-nav">
+                <% unless current_page?(root_path) %>
+                  <%= link_to "SweetRide", root_path, class: "nav-item nav-link", style: "color: black;" %>
+                <% end %>
+                <%= link_to "Profile" , edit_user_registration_path, class: "nav-item nav-link", style: "color: black;" %>
+            </div>
+            <div style="float: right" class="navbar-nav">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-item nav-link", style: "color: black;"  %>
+            </div>
         </div>
     </nav>
     <% else %>
         <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #ffffff; font-size: 20px; padding-left: 5px;padding-right: 5px;">
-            <div class="container">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <!-- <%= link_to "Bikes", bikes_path, class: "nav-item nav-link", style: "color: black;" %> -->
-                            <%= link_to "Become a Verified Seller", new_user_registration_path, class: "nav-item nav-link", style: "color: black;"  %>
-                            <%= link_to "Login", new_user_session_path, class: " nav-item nav-link", style: "color: black;", id: "push-right-navitem"  %>
-                        </div>
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div style="float: left" class="navbar-nav">
+                        <% unless current_page?(root_path) %>
+                          <%= link_to "SweetRide", root_path, class: "nav-item nav-link", style: "color: black;" %>
+                        <% end %>
+                        <%= link_to "Become a Verified Seller", new_user_registration_path, class: "nav-item nav-link", style: "color: black;"  %>
                     </div>
+                    <div style="float: right" class="navbar-nav">
+                        <%= link_to "Login", new_user_session_path, class: " nav-item nav-link", style: "color: black;", id: "push-right-navitem"  %>
+                    </div>
+                </div>
             </div>
         </nav>
         <% end %>

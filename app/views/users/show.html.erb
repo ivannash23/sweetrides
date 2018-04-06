@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>ID:</strong>
+	<%= @user.id %>
+</p>
+<p>
+	<strong>NAME:</strong>
+	<%= @user.name %>
+</p>
+<p>
+	<strong>EMAIL:</strong>
+	<%= @user.email %>
+</p>
+<p>
+	<strong>PHONE NUMBER:</strong>
+	<%= @user.phone_number %>
+</p>
+<p>
+	<strong>LOCATION:</strong>
+	<%= @user.location %>
+</p>
+<p>
+	<strong>WEBSITE:</strong>
+	<%= @user.website %>
+</p>
+<p>
+	<strong>APPROVED:</strong>
+	<%= @user.approved %>
+</p>
+
+<%= link_to 'Approve', approve_user_path %>

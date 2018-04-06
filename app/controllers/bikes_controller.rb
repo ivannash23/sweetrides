@@ -34,7 +34,6 @@ class BikesController < ApplicationController
     respond_to do |format|
       if @newbike.save
         # Tell the UserMailer to send a welcome email after save
-        UserMailer.welcome_email(@user).deliver
         format.html { redirect_to @newbike, notice: 'Bike was successfully created.' }
         format.json { render :show, status: :created, location: @newbike }
       else

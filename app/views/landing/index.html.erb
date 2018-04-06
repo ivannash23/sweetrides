@@ -16,17 +16,19 @@
     <div class="col-md-6">
         <h2 class="text-center"><%= link_to "• Bikes •", bikes_path , id: "marketplace-headers" %></h2>
             <div class="col-md-12">
-                <%= link_to(image_tag("https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;"), bikes_path) %>
+                <%= link_to(image_tag("https://images.pexels.com/photos/104842/bmw-vehicle-ride-bike-104842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;", id: "marketplace-hero"), bikes_path) %>
             </div>
     </div>
     <div class="col-md-6">
-        <h2 class="text-center"><%= link_to "• Parts •", "#" , id: "marketplace-headers" %></h2>
+        <h2 class="text-center"><%= link_to "• Parts •", parts_path , id: "marketplace-headers" %></h2>
             <div class="col-md-12">
-                <%= link_to(image_tag("https://images.pexels.com/photos/185545/pexels-photo-185545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;"), "#") %>
+                <%= link_to(image_tag("https://images.pexels.com/photos/185545/pexels-photo-185545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", class: "img-responsive card-mig-top", style: "border-radius: 25px; min-height: 387px;display: block;", id: "marketplace-hero"), parts_path) %>
             </div>
     </div>
 </div>
 <br>
+
+<!-- Leave it out for the moment -->
 <!-- <div class="text-center">
     <h2>• Latest Bikes •</h2>
 </div>
@@ -44,6 +46,8 @@
     <%= image_tag bike.avatar.url(:medium)%>
 <% end %>
 </div> -->
+
+<!-- Leave it out ends -->
 
 <div class="newslettercontent">
     <div class="leftside">

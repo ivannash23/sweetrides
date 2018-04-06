@@ -1,0 +1,33 @@
+<br><br>
+
+<% if @users.count < 1 %>
+	<h1>You have no Users</h1>
+<% else %>
+	<table>
+		<tr style="background-color:black;color:white; text-transform: capitalize;">
+			<td>id</td>
+			<td>name</td>
+			<td>email</td>
+			<td>phone number</td>
+			<td>location</td>
+			<td>website</td>
+			<td>approved</td>
+		</tr>
+	<% @users.each do |u| %>
+	  <tr style="color:black;">
+	    <td><%= u.id %></td>
+	    <td><%= u.name %></td>
+	    <td><%= u.email %></td>
+	    <td><%= u.phone_number %></td>
+	    <td><%= u.location %></td>
+	    <td><%= u.website %></td>
+	    <td><%= u.approved %></td>
+	    <td><%= link_to "View", user_path(u) %></td>
+	  </tr>
+	<% end %>
+</table>
+<% end %>
+
+
+ 
+ approved:

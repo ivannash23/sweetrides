@@ -10,11 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    def confirmation_url
-    end
-  end
 
   # GET /resource/edit
   # def edit
