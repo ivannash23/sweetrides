@@ -6,12 +6,7 @@
   Year : <%= f.number_field :year %><br />
   Mileage : <%= f.number_field :mileage %><br />
   Description : <%= f.text_area :description %><br />
-  <div class="field">
-      <%= f.label :avatar, class: 'control-label'  %>
-      <div class="col-sm-6">
-          <%= f.file_field :avatar %>
-      </div>
-  </div>
+  <%= f.hidden_field :user_id , :value => current_user.id %>
   <%= f.submit %>
 <% end %>
 
