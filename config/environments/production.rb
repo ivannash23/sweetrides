@@ -32,17 +32,19 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
+  Rails.application.routes.default_url_options[:host] = 'sweetrides.herokuapp.com'
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => 'sweetrides.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :address              =>  'smtp.sendgrid.net',
-  :port                 =>  '587',
+  :port                 =>  587,
   :authentication       =>  :plain,
   :user_name            =>  'ivannash23@heroku.com',
   :password             =>  'flamengo1',
-  :domain               =>  'sweetrides.herokuapp.com',
+  :domain               =>  'heroku.com',
   :enable_starttls_auto  =>  true
 }
 
