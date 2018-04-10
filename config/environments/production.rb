@@ -39,14 +39,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'sweetrides.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  :address              =>  'smtp.sendgrid.net',
-  :port                 =>  587,
-  :authentication       =>  :plain,
-  :user_name            =>  'ivannash23@heroku.com',
-  :password             =>  'flamengo1',
-  :domain               =>  'heroku.com',
-  :enable_starttls_auto  =>  true
-}
+    user_name:      'sweetride831@gmail.com',
+    password:       '1qaz!QAZ2wsx@WSX',
+    address:       'smtp.gmail.com',
+    port:          '587',
+    authentication: :plain,
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
