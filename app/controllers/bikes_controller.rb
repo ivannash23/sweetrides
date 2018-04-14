@@ -31,9 +31,14 @@ class BikesController < ApplicationController
     params.permit!
     @newbike = Bike.new(params[:bike])
 
+
     respond_to do |format|
       if @newbike.save
-        # Tell the UserMailer to send a welcome email after save
+        if params[:images]
+            params[:images].each do |image|
+              @newbike.pictures.create(image: image)
+            end
+        end
         format.html { redirect_to @newbike, notice: 'Bike was successfully created.' }
         format.json { render :show, status: :created, location: @newbike }
       else

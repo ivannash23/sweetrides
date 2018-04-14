@@ -3,22 +3,37 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  
+
   <h5>Now that you have finished creating your online shop, how about adding some SweetRides?</h5>
   <h6><%= link_to 'New Bike', new_bike_path , style: "color:white;"%></h6>
+  <h6><%= link_to 'New Part', new_part_path , style: "color:white;"%></h6>
+  
   <br>
   <br>
-  <br>
+
+  <h2><%= current_user.name %>'s Bikes</h2>
+  <% current_user.bikes.each do |bike| %>
+  <h5><%= bike.brand %>, <%= bike.model %> <%= link_to "Details", bike_path(bike), class: "btn btn-default" %></h5>
+  <% end %>
+
+  <hr>
+
+  <h2><%= current_user.name %>'s Parts</h2>
+  <% current_user.parts.each do |part| %>
+  <h5><%= part.brand %>, <%= part.model %> <%= link_to "Details", part_path(part), class: "btn btn-default" %></h5>
+  <% end %>
+
   <hr>
 
   <div class="field">
       <%= f.label :avatar, class: 'control-label'  %>
       <%= f.file_field :avatar %>
   </div>
+
+  <br>
+  <br>
+  <br>
   
-  <br>
-  <br>
-  <br>
   <hr>
 
   <div class="field">

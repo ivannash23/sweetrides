@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_many :bikes
+  has_many :parts
 
   has_attached_file :avatar, styles: {
   thumb: '100x100>',

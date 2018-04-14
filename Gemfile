@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'devise'
 
+gem "loofah", "~> 2.2.1"
+
+
 gem "paperclip", '~> 5.2.0'
 
 gem 'aws-sdk', '~> 2'

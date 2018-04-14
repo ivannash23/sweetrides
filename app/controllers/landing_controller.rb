@@ -4,7 +4,7 @@ class LandingController < ApplicationController
 
   	sort = params[:sort]
   	sort = nil unless sort.in?(['model', 'brand'])
-  	
+
   	@bikesOrder = Bike.order(sort)
 
   end
